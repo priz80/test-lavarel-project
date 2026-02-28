@@ -36,14 +36,18 @@ cd test-laravel-project
 
 ### 2. Установите зависимости
 
+```bash
 composer install
+```
 
 ---
 
 ### 3. Настройте окружение
 Создайте файл .env на основе примера:
 
+```bash
 cp .env.example .env
+```
 
 #### Убедитесь, что в .env указано:
 
@@ -53,7 +57,9 @@ DB_CONNECTION=sqlite
 
 ### 4. Создайте базу данных SQLite
 
+```bash
 touch database/database.sqlite
+```
 
 ### Файл будет автоматически использоваться как БД.
 
@@ -61,7 +67,9 @@ touch database/database.sqlite
 
 ### 5. Выполните миграции
 
+```bash
 php artisan migrate
+```
 
 ### Это создаст таблицу tasks
 
@@ -69,7 +77,9 @@ php artisan migrate
 
 ### 6. Запустите сервер
 
+```bash
 php artisan serve
+```
 
 ### API доступно по адресу: http://localhost:8000/api/tasks
 
@@ -102,6 +112,7 @@ php artisan serve
 
  Создать задачу
 
+```http
 POST http://localhost:8000/api/tasks
 Content-Type: application/json
 
@@ -110,10 +121,13 @@ Content-Type: application/json
   "description": "Создать README.md",
   "status": "in_progress"
 }
+```
 
  Получить все задачи
 
+```http
 GET http://localhost:8000/api/tasks
+```
 
 ## 🗂️ Структура проекта (ключевые файлы)
 
@@ -126,10 +140,12 @@ database/migrations/*_create_tasks_table.php — структура БД
 
 ## 🧹 Очистка кэша (при необходимости)
 
+```bash
 php artisan config:clear
 php artisan cache:clear
 php artisan route:clear
 php artisan view:clear
+```
 
 ## 📄 Лицензия
 
